@@ -10,18 +10,19 @@ let userAnswers = {};
 
 buttons.forEach(function(button){
     button.addEventListener("click", function() {
-        //highlight (resource 2)
-        let questionBlock = button.closest(".question-block");
-        let allButtons = questionBlock.querySelectorAll(".answer-btn");
+        // Highlight selected button (resource 2)
+        let allButtons = button.querySelectorAll(".answer-btn");
         allButtons.forEach(function(btn) {
             btn.classList.remove("selected");
         });
         button.classList.add("selected");
-        //tracking & storing (resource 3)
+
+        // tracking (resource 3)
         let house = button.dataset.house;
-        let questionID = button.closest(".container").id;
+        let questionID = document.getElementById(".container"); 
         userAnswers[questionID] = house;
-        console.log("Selected house for", questionID, ":", house);
+
+        console.log("Selected for", questionID, ":", house);
         console.log("Current answers:", userAnswers);
     });
 });
