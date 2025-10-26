@@ -30,8 +30,7 @@ questionBlocks.forEach(function(block) {
 });
 
 //connect to DOM (resource 1), show results/count (resource2)
-let showResultButton = document.getElementById("show-result");
-showResultButton.addEventListener("click", function() {
+function displayResult() {
     let housePoints = {
         Gryffindor: 0,
         Hufflepuff: 0,
@@ -69,4 +68,8 @@ let resultText = document.getElementById("result-text");
   }
 
   resultContainer.style.display = "block";
-});
+
+  console.log("Final result displayed:", topHouse);
+};
+let showResultButton = document.getElementById("show-result");
+showResultButton.addEventListener("click",displayResult);
