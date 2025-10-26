@@ -1,3 +1,4 @@
+//apologies in advance for how insane the commits on this were. I think I might've started out making this more complicated than I needed to, and then just kept confusing myself by googling and looking up different solutions in the w3 page. Feeling a little discouraged as I have no real idea how or why any of this ended up working. 
 console.log("script.js connected!");
 
 //connect to DOM (resource 1)
