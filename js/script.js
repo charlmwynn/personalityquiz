@@ -18,11 +18,11 @@ buttons.forEach(function(button){
         });
         button.classList.add("selected");
         //tracking & storing (resource 3)
-        let house = button.dataset.answer;
+        let house = button.dataset.house;
         let questionID = button.closest(".container").id;
         userAnswers[questionID] = house;
         console.log("Selected house for", questionID, ":", house);
-        onsole.log("Current answers:", userAnswers);
+        console.log("Current answers:", userAnswers);
     });
 });
 
@@ -48,6 +48,7 @@ let topHouse = "None";
     }
   }
 
+  //data attributes (resoruce 3)
 let resultContainer = document.getElementById("result-container");
 let resultText = document.getElementById("result-text");
 
