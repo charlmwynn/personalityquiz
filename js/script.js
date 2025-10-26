@@ -2,28 +2,30 @@ console.log("script.js connected!");
 
 //connect to DOM (resource 1)
 
-let buttons = document.querySelectorAll(".answer-btn");
+let questionBlocks = document.querySelectorAll(".question-block");
 
 let userAnswers = {};
 
 //Event listener (resource 2)
 
-buttons.forEach(function(button){
-    button.addEventListener("click", function() {
-        // Highlight selected button (resource 2)
-        let allButtons = button.querySelectorAll(".answer-btn");
-        allButtons.forEach(function(btn) {
-            btn.classList.remove("selected");
+questionBlocks.forEach(function(block) {
+    let buttons = block.querySelectorAll(".answer-btn");
+    buttons.forEach(function(button){
+        button.addEventListener("click", function() {
+            // Highlight selected button (resource 2)
+            buttons.forEach(function(btn) {
+                btn.classList.remove("selected");
+            });
+            button.classList.add("selected");
+
+            // tracking (resource 3)
+            let house = button.dataset.house;
+            let questionID = block.id; 
+            userAnswers[questionID] = house;
+
+            console.log("Selected for", questionID, ":", house);
+            console.log("Current answers:", userAnswers);
         });
-        button.classList.add("selected");
-
-        // tracking (resource 3)
-        let house = button.dataset.house;
-        let questionID = document.getElementById(".container"); 
-        userAnswers[questionID] = house;
-
-        console.log("Selected for", questionID, ":", house);
-        console.log("Current answers:", userAnswers);
     });
 });
 
